@@ -1,9 +1,9 @@
 name : test hello world program
 
 on:
-  push:
     schedule:
-      - cron:  '50 5 * * *'
+       - cron: '*/10 * * * *'
+
 
 jobs:
   build:
