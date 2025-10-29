@@ -1,14 +1,14 @@
-name : test hello world program
+name: Run Every 10 Minutes
 
 on:
-    schedule:
-       - cron: '*/10 * * * *'
-
+  schedule:
+    - cron: '*/10 * * * *'
 
 jobs:
-  build:
+  run-script:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Print message
+        run: echo "This workflow ran at $(date) every 10 minutes!"
